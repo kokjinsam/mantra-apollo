@@ -1,6 +1,6 @@
 import createApolloClient from './createApolloClient';
 
-function apolloMiddleware(options) {
+function apolloMiddleware(options = {}) {
   const {
     clientName = 'Client',
     ...others,
