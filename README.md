@@ -1,35 +1,23 @@
-# Mantra Redux Middleware
+# Mantra Apollo Middleware
 
 ## Installation
 
 ```
-npm install --save mantra-redux mantra-plus
+npm install --save mantra-apollo mantra-plus apollo-tools apollo-client
 ```
 
 ## Basic Usage
 
 ```
-import redux from 'mantra-redux';
-import thunk from 'redux-thunk';
-import createLogger from 'redux-logger';
-
-const logger = createLogger();
-const middlewares = [
-  thunk,
-  logger,
-  Client.middleware(),
-];
+import apollo from 'mantra-apollo';
 
 // create a Mantra app
 const app = createApp(context);
 
 // load middlewares before loading module
 app.loadMiddlewares([
-  redux({
-    reducers: {
-      apollo: Client.reducer(),
-    },
-    middlewares,
+  apollo({
+    clientName: 'Client',
   }),
 ]);
 
